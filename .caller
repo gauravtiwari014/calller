@@ -1,0 +1,53 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+
+
+public class LinkedListSample {
+	
+	LinkedList <Supplier> suppliersLL = new LinkedList<Supplier>();
+	public void populateLinkedList()
+	{
+		Supplier sup1 = new Supplier("S001","RT AGencies","Indiranagar","6484884844",20000);
+		Supplier sup2 = new Supplier("S002","ST AGencies","Malleswaram","6484456744",30000);
+		Supplier sup3 = new Supplier("S003","RP AGencies","Jayanagar","6484884544",40000);
+		Supplier sup4 = new Supplier("S004","KL AGencies","Koramangala","6484887644",50000);
+		Supplier sup5 = new Supplier("S005","KR AGencies","Vijayanagar","6489184844",60000);
+		suppliersLL.add(sup1);
+		suppliersLL.add(sup2);
+		suppliersLL.add(sup3);
+		suppliersLL.add(sup4);
+		suppliersLL.add(sup5);
+		suppliersLL.addFirst(new Supplier("S00A","TR AGencies","JJNagar","6454694844",40000));
+		suppliersLL.addLast(new Supplier("S006","KM AGencies","JRNagar","6453614844",36000));
+		
+		
+	}
+	public void fetchLinkedList()
+	{
+		Iterator <Supplier> supIterLL = suppliersLL.iterator();
+		while(supIterLL.hasNext())
+		{
+			Supplier supplier = supIterLL.next();
+			System.out.println("supplier");
+		}
+	}
+	public void fetchLinkedListDesc()
+	{
+		Iterator <Supplier> supDescIter = suppliersLL.descendingIterator();
+		while(supDescIter.hasNext())
+		{
+			System.out.println(supDescIter.next());
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedListSample lls = new LinkedListSample();
+		lls.populateLinkedList();
+		lls.fetchLinkedList();
+		System.out.println("--------LinkedList in Desc Order---------");
+		lls.fetchLinkedListDesc();
+
+	}
+
+}
